@@ -128,8 +128,8 @@ def run_step(letter):
             raise EOFError("EOI when reading input")
             # Because indexing too far raises an error. :'(
 
-        register = ord(prog_input[-1 + num]) # Hooray for built-ins!
-        prog = prog_input[:num] + prog_input[num + 1:]
+        register = ord(prog_input[num - 1]) # Hooray for built-ins!
+        prog_input = prog_input[:num - 1] + prog_input[num:]
 
     elif letter == "x":
         if num > 3:
